@@ -33,3 +33,10 @@ class UserController:
 
     def get_all_users(self):
         return self.users
+    
+    def assign_role_to_user(self, user_id, role):
+        user = self.get_user(user_id)
+        if user:
+            user.assign_role(role)
+            return True
+        return False

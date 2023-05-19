@@ -33,3 +33,10 @@ class RoleController:
 
     def get_all_roles(self):
         return self.roles
+    
+    def assign_permission_to_role(self, role_id, permission):
+        role = self.get_role(role_id)
+        if role:
+            role.assign_permission(permission)
+            return True
+        return False
